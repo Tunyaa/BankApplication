@@ -31,7 +31,7 @@ public class BalanceController {
         return bankService.addMoney(transferBalance.getTo(), transferBalance.getAmount());
     }
 
-    //--Узнать балланс
+    
     
     //--Перевести деньги 
     @PostMapping("/transfer")
@@ -43,6 +43,6 @@ public class BalanceController {
     @ExceptionHandler(IllegalArgumentException.class)
     public String handle(IllegalArgumentException e){
         log.error(e.getMessage());
-        return "ExceptionHandler - Конец";
+        return "ExceptionHandler";
     }
 }
