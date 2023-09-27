@@ -42,7 +42,7 @@ public class BankService {
             throw new IllegalArgumentException("No customers");
         } else if (transferBalance.getAmount().compareTo(fromBalance) > 0) {// - Если сумма перевода, больше чем сумма на счёте  
             throw new IllegalArgumentException("No money");
-        } else {// - Иначе выполнить переводж
+        } else {// - Иначе выполнить перевод
             BigDecimal updateFromBalance = fromBalance.subtract(transferBalance.getAmount());
             BigDecimal updateToBalance = toBalance.add(transferBalance.getAmount());
             repository.save(transferBalance.getFrom(), updateFromBalance);
